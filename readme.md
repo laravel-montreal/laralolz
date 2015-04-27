@@ -2,7 +2,7 @@
 
 Laralolz is a Laravel PHP framework application which allows anyone to very simply and spontaneously organize outings during conferences, or to join outings created by others. 
 
-The application has been initialized, builded and designed by the Laravel Montreal community.
+The application has been initialized, builded and designed by the [Laravel Montreal community](https://twitter.com/LaravelMtl)
 
 ## Why ?
 
