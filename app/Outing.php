@@ -17,6 +17,11 @@ class Outing extends Model {
 
   public function administrator()
   {
-    return $this->belongsTo('App\User');
+    return $this->belongsTo('App\User', 'administrator_id');
+  }
+
+  public function participants()
+  {
+    return $this->belongsToMany('App\User');
   }
 }
