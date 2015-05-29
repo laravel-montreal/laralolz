@@ -20,7 +20,7 @@ class CreateOutings extends Migration {
       $table->string('subtitle')->nullable();
       $table->datetime('starts_at');
       $table->datetime('ends_at')->nullable();
-      $table->text('description');
+      $table->text('description')->nullable();
       $table->integer('venue_id')->unsigned()->nullable();
       $table->foreign('venue_id')->references('id')->on('venues')->onDelete('cascade')->onUpdate('cascade');
       $table->integer('administrator_id')->unsigned()->nullable();
