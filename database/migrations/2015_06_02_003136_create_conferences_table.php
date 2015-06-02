@@ -14,7 +14,7 @@ class CreateConferencesTable extends Migration {
 	{
 		Schema::create('conferences', function(Blueprint $table)
 		{
-			$table->increments('id');
+            $table->increments('id');
             $table->string('slug')->unique();
             $table->string('title');
             $table->string('subtitle')->nullable();
