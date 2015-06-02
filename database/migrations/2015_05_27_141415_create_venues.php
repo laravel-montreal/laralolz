@@ -30,6 +30,7 @@ class CreateVenues extends Migration {
       $table->string('email')->nullable();
       $table->decimal('latitude', 23, 20)->nullable();
       $table->decimal('longitude', 23, 20)->nullable();
+      $table->text('description')->nullable();
       $table->timestamps();
       $table->softDeletes();
 		});
