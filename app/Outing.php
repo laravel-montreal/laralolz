@@ -10,18 +10,18 @@ class Outing extends Model {
 
 	protected $fillable = ['slug', 'title', 'subtitle', 'starts_at', 'ends_at'];
 
-  public function venue()
-  {
-    return $this->belongsTo('App\Venue');
-  }
+    public function venue()
+    {
+        return $this->belongsTo('App\Venue');
+    }
 
-  public function administrator()
-  {
-    return $this->belongsTo('App\User', 'administrator_id');
-  }
+    public function administrator()
+    {
+        return $this->belongsTo('App\User', 'administrator_id');
+    }
 
-  public function participants()
-  {
-    return $this->belongsToMany('App\User');
-  }
+    public function participants()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }
