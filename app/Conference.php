@@ -11,4 +11,9 @@ class Conference extends Model {
         return $this->belongsTo('App\User', 'admin_id');
     }
 
+    public function outings()
+    {
+        return $this->hasMany('App\Outing');
+    }
+
 }

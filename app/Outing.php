@@ -15,6 +15,11 @@ class Outing extends Model {
         return $this->belongsTo('App\Venue');
     }
 
+    public function conference()
+    {
+        return $this->belongsTo('App\Conference');
+    }
+
     public function admin()
     {
         return $this->belongsTo('App\User', 'admin_id');
