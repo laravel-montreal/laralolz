@@ -1,4 +1,6 @@
-<?php namespace App;
+<?php
+
+namespace App;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -31,11 +33,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function outings()
     {
         return $this->belongsToMany('App\Outing');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function conferences()
     {
         return $this->belongsToMany('App\Conference');
