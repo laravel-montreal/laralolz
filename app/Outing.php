@@ -5,9 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Outing extends Model {
+class Outing extends Model
+{
 
-	use SoftDeletes;
+    use SoftDeletes;
 
     /**
      * @var array
@@ -41,7 +42,7 @@ class Outing extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function participants()
+    public function users()
     {
         return $this->belongsToMany('App\User');
     }
