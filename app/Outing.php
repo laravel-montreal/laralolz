@@ -3,13 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Outing extends Model
 {
-
-    use SoftDeletes;
-
     /**
      * @var array
      */

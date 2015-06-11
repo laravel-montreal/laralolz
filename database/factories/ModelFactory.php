@@ -36,8 +36,6 @@ $factory->define('App\Venue', function ($faker) {
         'phone' => '555-696-9696',
         'url' => 'www.chez-pare.com',
         'email' => 'pare@chez-pare.com',
-        'latitude' => '',
-        'longitude' => '',
     ];
 });
 

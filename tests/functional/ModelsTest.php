@@ -2,6 +2,7 @@
 
 use App\Conference;
 use App\Outing;
+use App\User;
 use App\Venue;
 
 class ModelsTest extends TestCase
@@ -110,5 +111,36 @@ class ModelsTest extends TestCase
     /**
      *  TODO: verify update and delete cascades
      */
+    /**
+     * Since there is an onDelete on admin_id in conferences table,
+     * the conference should be deleted too and this test is not supposed to work!
+     */
+    public function testRemovingAdminKeepsConference()
+    {
+        $conference = factory('App\Conference')->create();
+        $admin = factory('App\User')->create();
+        $conference->admin()->associate($admin);
+
+        $admin->delete();
+        $dbConferences = Conference::all();
+        $dbUsers = User::all();
+
+        $this->assertCount(0, $dbUsers);
+        $this->assertCount(1, $dbConferences);
+    }
+
+    public function testRemovingConferenceKeepsAdminAsUser()
+    {
+        $conference = factory('App\Conference')->create();
+        $admin = factory('App\User')->create();
+        $conference->admin()->associate($admin);
+
+        $conference->delete();
+        $dbConferences = Conference::all();
+        $dbUsers = User::all();
+
+        $this->assertCount(1, $dbUsers);
+        $this->assertCount(0, $dbConferences);
+    }
 
 }
