@@ -107,4 +107,8 @@ class ModelsTest extends TestCase
         $this->assertEquals($admin->lists('id')->all(), $dbAdmin->lists('id')->all());
     }
 
+    /**
+     *  TODO: verify update and delete cascades
+     */
+
 }
