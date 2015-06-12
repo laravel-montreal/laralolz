@@ -2,9 +2,12 @@
 namespace App\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 
 abstract class EloquentRepositoryBase implements RepositoryBaseInterface
 {
+    use DispatchesJobs;
+
     /**
      * @var Model
      */
