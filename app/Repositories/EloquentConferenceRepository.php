@@ -40,12 +40,12 @@ class EloquentConferenceRepository extends EloquentRepositoryBase implements Con
     /**
      *
      */
-    public function getUpcomming()
+    public function getUpcoming()
     {
         return $this->model
-            ->where('starts_at', '>=', Carbon::now())
-            ->orWhere('ends_at', '<=', Carbon::now())
-            ->orderBy('starts_at', 'asc');
+                    ->where('starts_at', '>=', Carbon::now())
+                    ->orWhere('ends_at', '<=', Carbon::now())
+                    ->orderBy('starts_at', 'asc');
     }
 
     /**

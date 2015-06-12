@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateConferenceRequest;
 use App\Repositories\ConferenceRepositoryInterface;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class ConferenceController extends Controller
 {
@@ -24,7 +23,7 @@ class ConferenceController extends Controller
      */
     public function index()
     {
-        $conferences = $this->conferenceRepository->getUpcomming();
+        $conferences = $this->conferenceRepository->getUpcoming();
 
         return view('conferences.index', compact('conferences'));
     }

@@ -21,5 +21,5 @@ interface ConferenceRepositoryInterface extends RepositoryBaseInterface
     /**
      * @return mixed
      */
-    public function getUpcomming();
+    public function getUpcoming();
 }
