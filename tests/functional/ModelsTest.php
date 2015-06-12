@@ -108,13 +108,6 @@ class ModelsTest extends TestCase
         $this->assertEquals($admin->lists('id')->all(), $dbAdmin->lists('id')->all());
     }
 
-    /**
-     *  TODO: verify update and delete cascades
-     */
-    /**
-     * Since there is an onDelete on admin_id in conferences table,
-     * the conference should be deleted too and this test is not supposed to work!
-     */
     public function testRemovingAdminKeepsConference()
     {
         $conference = factory('App\Conference')->create();
