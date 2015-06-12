@@ -22,29 +22,29 @@ $factory->define(App\User::class, function ($faker) {
 
 $factory->define('App\Venue', function ($faker) {
     return [
-        'slug' => 'chez-pare',
-        'title' => 'Chez Paré',
-        'subtitle' => 'ou la Maison du Père Noël',
-        'description' => 'Bar de bon goût à prix compétitifs, très compétitifs',
-        'address1' => '1, place Ville-Marie',
+        'slug' => $faker->unique()->slug,
+        'title' => $faker->sentence(3),
+        'subtitle' => $faker->sentence(5),
+        'description' => $faker->text,
+        'address1' => $faker->streetAddress,
         'address2' => '',
         'address3' => '',
-        'city' => 'Montréal',
-        'state' => 'QC',
+        'city' => $faker->city,
+        'state' => $faker->stateAbbr,
         'country' => 'Canada',
         'postal_code' => 'H0H 0H0',
-        'phone' => '555-696-9696',
-        'url' => 'www.chez-pare.com',
-        'email' => 'pare@chez-pare.com',
+        'phone' => $faker->phoneNumber,
+        'url' => $faker->url,
+        'email' => $faker->email,
     ];
 });
 
 $factory->define('App\Outing', function ($faker) {
     return [
-        'slug' => 'le-sapin-a-des-boules',
-        'title' => 'Le Sapin a des boules',
-        'subtitle' => 'sous-titre suggestif',
-        'description' => 'Party de Noël avec beaucoup de plaisir',
+        'slug' => $faker->unique()->slug,
+        'title' => $faker->sentence(3),
+        'subtitle' => $faker->sentence(5),
+        'description' => $faker->text,
         'starts_at' => '2015-12-24 19:00:00',
         'ends_at' => '2015-12-25 03:00:00',
     ];
@@ -52,21 +52,21 @@ $factory->define('App\Outing', function ($faker) {
 
 $factory->define('App\Conference', function ($faker) {
     return [
-        'slug' => 'laracon-chez-pare',
-        'title' => 'Laracon Chez Paré',
-        'subtitle' => 'Taylor va être content',
-        'description' => 'Codes et boules chez Paré',
+        'slug' => $faker->unique()->slug,
+        'title' => $faker->sentence(3),
+        'subtitle' => $faker->sentence(5),
+        'description' => $faker->text,
         'starts_at' => '2015-12-21 19:00:00',
         'ends_at' => '2015-12-25 03:00:00',
-        'address1' => '1, place Ville-Marie',
+        'address1' => $faker->streetAddress,
         'address2' => '',
         'address3' => '',
-        'city' => 'Montréal',
-        'state' => 'QC',
+        'city' => $faker->city,
+        'state' => $faker->stateAbbr,
         'country' => 'Canada',
         'postal_code' => 'H0H 0H0',
-        'phone' => '555-696-9696',
-        'url' => 'www.chez-pare.com',
-        'email' => 'pare@chez-pare.com',
+        'phone' => $faker->phoneNumber,
+        'url' => $faker->url,
+        'email' => $faker->email,
     ];
 });
