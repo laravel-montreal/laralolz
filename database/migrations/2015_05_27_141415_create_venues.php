@@ -1,20 +1,20 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
-class CreateVenues extends Migration {
+class CreateVenues extends Migration
+{
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::create('venues', function(Blueprint $table)
-		{
-			$table->increments('id');
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('venues', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('slug')->unique();
             $table->string('title');
             $table->string('subtitle')->nullable();
@@ -31,22 +31,18 @@ class CreateVenues extends Migration {
             $table->string('url')->nullable();
             $table->string('email')->nullable();
 
-            $table->decimal('latitude', 23, 20)->nullable();
-            $table->decimal('longitude', 23, 20)->nullable();
-
             $table->timestamps();
-            $table->softDeletes();
-      });
-	}
+        });
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('venues');
-	}
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('venues');
+    }
 
 }

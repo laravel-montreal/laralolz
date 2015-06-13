@@ -5,3 +5,5 @@
 /.idea/
 /vendor/
 .DS_Store
+
+tests/_output/*
