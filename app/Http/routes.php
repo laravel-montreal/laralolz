@@ -20,13 +20,13 @@
  */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('atomic.templates.home');
 });
 
 // Note: The logged in page will be accessible from the '/' route when user is authenticated.
 // This should be done in a future commit.
 Route::get('/logged-in', function () {
-    return view('atomic.template.logged-in');
+    return view('atomic.templates.logged-in');
 });
 
 /**
@@ -34,26 +34,26 @@ Route::get('/logged-in', function () {
  */
 
 Route::get('/outing/choose', function () {
-    return view('atomic.template.outing.choose');
+    return view('atomic.templates.outing.choose');
 });
 
 Route::get('/outing/create', function () {
-    return view('atomic.template.outing.create');
+    return view('atomic.templates.outing.create');
 });
 
 Route::get('/outing/description', function () {
-    return view('atomic.template.outing.description');
+    return view('atomic.templates.outing.description');
 });
 
 Route::get('/outing/own', function () {
-    return view('atomic.template.outing.own');
+    return view('atomic.templates.outing.own');
 });
 
 /**
- * Search route
+ * Venue routes
  */
 
-Route::get('/search', function () {
-    return view('atomic.template.outing.own');
+Route::get('/venue/search', function () {
+    return view('atomic.templates.venue.search');
 });
 
