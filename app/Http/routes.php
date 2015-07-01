@@ -20,7 +20,7 @@
  */
 
 Route::get('/', function () {
-    return view('atomic.templates.home');
+    return view('atomic.pages.home');
 });
 
 // Note: The logged in page will be accessible from the '/' route when user is authenticated.
