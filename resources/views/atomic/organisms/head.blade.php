@@ -1,3 +1,3 @@
 <head>
-    @include('atomic.molecules.head-items')
+    @include('atomic.molecules.head-elements')
 </head>

@@ -6,7 +6,7 @@
             @yield('main')
         </main>
         <footer>
-            @include('atomic.organisms.footer')
+            @yield('footer')
         </footer>
     </body>
 </html>

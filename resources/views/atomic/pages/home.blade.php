@@ -9,5 +9,10 @@
 @stop
 
 @section('main')
-    fooMain
+    @include('atomic.organisms.header')
+    @include('atomic.organisms.event.list')
+@stop
+
+@section('footer')
+    @include('atomic.organisms.footer')
 @stop
