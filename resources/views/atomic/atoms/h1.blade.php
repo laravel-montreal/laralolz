@@ -1,3 +1,3 @@
-<h1 id="{{ $id }}" class="{{ $classes }}">
-    {{ $content }}
+<h1 id="@yield('id')" class="@yield('classes')">
+    @yield('content')
 </h1>

@@ -1,3 +1,3 @@
-<button id="{{ $id }}" class="{{ $classes }}">
-    {{ $content }}
+<button id="@yield('id')" class="@yield('classes')">
+    @yield('content')
 </button>
