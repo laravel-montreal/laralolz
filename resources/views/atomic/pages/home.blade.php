@@ -1,4 +1,4 @@
-@extends('atomic.templates.home')
+@extends('atomic.templates.base')
 
 @section('pageTitle')
     Insert clever slogan here
@@ -9,10 +9,10 @@
 @stop
 
 @section('main')
-    @include('atomic.organisms.header')
+    @include('atomic.molecules.home.header')
     @include('atomic.organisms.event.list')
 @stop
 
 @section('footer')
-    @include('atomic.organisms.footer')
+    @include('atomic.molecules.footer')
 @stop

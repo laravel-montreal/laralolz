@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-    @include('atomic.organisms.head')
+    @include('atomic.molecules.head')
     <body class="@yield('bodyClass')">
         <main>
             @yield('main')

@@ -26,7 +26,7 @@ Route::get('/', function () {
 // Note: The logged in page will be accessible from the '/' route when user is authenticated.
 // This should be done in a future commit.
 Route::get('/logged-in', function () {
-    return view('atomic.templates.logged-in');
+    return view('atomic.pages.logged-in');
 });
 
 /**
@@ -34,19 +34,19 @@ Route::get('/logged-in', function () {
  */
 
 Route::get('/outing/choose', function () {
-    return view('atomic.templates.outing.choose');
+    return view('atomic.pages.outing.choose');
 });
 
 Route::get('/outing/create', function () {
-    return view('atomic.templates.outing.create');
+    return view('atomic.pages.outing.create');
 });
 
 Route::get('/outing/description', function () {
-    return view('atomic.templates.outing.description');
+    return view('atomic.pages.outing.description');
 });
 
 Route::get('/outing/own', function () {
-    return view('atomic.templates.outing.own');
+    return view('atomic.pages.outing.own');
 });
 
 /**
@@ -54,17 +54,7 @@ Route::get('/outing/own', function () {
  */
 
 Route::get('/venue/search', function () {
-    return view('atomic.templates.venue.search');
+    return view('atomic.pages.venue.search');
 });
-
-
-/**
- * Dev Sandbox (change the view to whatever you want to test...)
- */
-
-Route::get('/sandbox', function () {
-    return view('atomic.molecules.footer');
-});
-
 
 
