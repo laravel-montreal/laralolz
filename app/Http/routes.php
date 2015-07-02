@@ -57,3 +57,14 @@ Route::get('/venue/search', function () {
     return view('atomic.templates.venue.search');
 });
 
+
+/**
+ * Dev Sandbox (change the view to whatever you want to test...)
+ */
+
+Route::get('/sandbox', function () {
+    return view('atomic.molecules.event.list.article');
+});
+
+
+
