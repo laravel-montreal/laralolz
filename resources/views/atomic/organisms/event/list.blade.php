@@ -1,5 +1,5 @@
-<section id="eventList">
-    @include('atomic.organisms.event.list.title')
-    @include('atomic.molecules.event.list')
-    @include('atomic.organisms.event.list.add-btn')
+<section>
+    @include('atomic.molecules.event.list.article')
+    @include('atomic.molecules.event.list.article')
+    @include('atomic.molecules.event.list.article')
 </section>

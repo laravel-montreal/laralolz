@@ -63,7 +63,7 @@ Route::get('/venue/search', function () {
  */
 
 Route::get('/sandbox', function () {
-    return view('atomic.molecules.event.list.article');
+    return view('atomic.molecules.footer');
 });
 
 
