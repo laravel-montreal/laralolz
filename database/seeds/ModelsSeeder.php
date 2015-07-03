@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Database\Seeder;
-
-class ModelsSeeder extends Seeder
+class ModelsSeeder extends BaseSeeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +9,7 @@ class ModelsSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0'); // disable foreign key constraints
+        $this->disableForeignKeys();
 
         DB::table('conferences')->truncate();
         DB::table('venues')->truncate();
@@ -28,7 +26,7 @@ class ModelsSeeder extends Seeder
             $this->seedConferenceRelations($conferences[$i], $outings, $users[$i]);
         }
 
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1'); // enable foreign key constraints
+        $this->enableForeignKeys();
     }
 
     private function makeOutings($numberEntities, $users, $venues)
