@@ -14,12 +14,13 @@
  *                                                        -- Your friendly neighborhood front-end team
  */
 
+Route::resource('/', 'ConferenceController');
 
 /**
  *  Home routes
  */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('atomic.pages.home');
 });
 

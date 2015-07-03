@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Conference extends Model
 {
-
     /**
      * @var array
      */
@@ -27,5 +26,4 @@ class Conference extends Model
     {
         return $this->hasMany('App\Outing');
     }
-
 }
