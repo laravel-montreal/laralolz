@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Repositories;
+namespace App\ManagerBaseInterface;
 
 use App\Conference;
 use App\Jobs\CreateConference;
 use Carbon\Carbon;
 
-class EloquentConferenceRepository extends EloquentRepositoryBase implements ConferenceRepositoryInterface
+class EloquentConferenceManager extends EloquentManagerBase implements ConferenceManagerInterface
 {
     protected $model;
 

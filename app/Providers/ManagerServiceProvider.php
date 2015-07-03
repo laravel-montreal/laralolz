@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class RepositoryServiceProvider extends ServiceProvider
+class ManagerServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
@@ -14,8 +14,8 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            'App\Repositories\ConferenceRepositoryInterface',
-            'App\Repositories\EloquentConferenceRepository'
+            'App\Managers\ConferenceManagerInterface',
+            'App\Managers\EloquentConferenceManager'
         );
     }
 }

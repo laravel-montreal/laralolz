@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Managers;
 
-interface ConferenceRepositoryInterface extends RepositoryBaseInterface
+interface ConferenceManagerInterface extends EloquentManagerBase
 {
     /**
      * @param $name

@@ -1,9 +1,9 @@
 <?php
-namespace App\Repositories;
+namespace App\Managers;
 
 use Illuminate\Database\Eloquent\Model;
 
-interface RepositoryBaseInterface {
+interface ManagerBaseInterface {
     /**
      * @param $id
      * @return Model

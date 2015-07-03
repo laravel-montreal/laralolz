@@ -1,10 +1,10 @@
 <?php
-namespace App\Repositories;
+namespace App\Managers;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 
-abstract class EloquentRepositoryBase implements RepositoryBaseInterface
+abstract class EloquentManagerBase implements ManagerBaseInterface
 {
     use DispatchesJobs;
 
