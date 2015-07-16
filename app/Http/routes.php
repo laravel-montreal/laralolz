@@ -62,7 +62,7 @@ Route::get('/venue/search', function () {
  * Twitter login/logout routes
  */
 
-Route::get('auth/login', function(){
+Route::get('auth/login', function () {
     return view('atomic.pages.login');
 });
 

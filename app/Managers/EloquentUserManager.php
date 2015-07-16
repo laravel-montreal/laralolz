@@ -26,5 +26,4 @@ class EloquentUserManager extends EloquentManagerBase implements UserManagerInte
             'avatar'     => $userData->avatar
         ]);
     }
-
 }

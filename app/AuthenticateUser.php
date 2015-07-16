@@ -2,7 +2,6 @@
 
 namespace app;
 
-
 use App\Drivers\SocialiteTwitter;
 use App\Managers\UserManagerInterface;
 use Illuminate\Contracts\Auth\Guard;
@@ -13,7 +12,7 @@ class AuthenticateUser
     private $socialiteTwitter;
     private $auth;
 
-    function __construct(UserManagerInterface $users, SocialiteTwitter $socialiteTwitter, Guard $auth)
+    public function __construct(UserManagerInterface $users, SocialiteTwitter $socialiteTwitter, Guard $auth)
     {
         $this->users = $users;
         $this->socialiteTwitter = $socialiteTwitter;
@@ -22,7 +21,9 @@ class AuthenticateUser
 
     public function execute($hasToken)
     {
-        if (!$hasToken) return $this->getAuthorisationFirst();
+        if (!$hasToken) {
+            return $this->getAuthorisationFirst();
+        }
         $user = $this->users->findByUsernameOrCreate($this->getTwitterUser());
         $this->auth->login($user, true);
         return redirect()->intended('/home');
@@ -35,7 +36,6 @@ class AuthenticateUser
 
     private function getTwitterUser()
     {
-       return $this->socialiteTwitter->user();
+        return $this->socialiteTwitter->user();
     }
-
 }
