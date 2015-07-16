@@ -1,0 +1,1 @@
+<a href="{{ URL::to('twitter/login') }}">login with twitter</a>

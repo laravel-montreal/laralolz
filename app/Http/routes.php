@@ -58,4 +58,19 @@ Route::get('/venue/search', function () {
     return view('atomic.pages.venue.search');
 });
 
+/**
+ * Twitter login/logout routes
+ */
 
+Route::get('auth/login', function(){
+    return view('atomic.pages.login');
+});
+
+Route::get('twitter/login', 'AuthController@login');
+
+Route::get('logout', 'AuthController@logout');
+
+// test protected route
+Route::get('profile', ['middleware' => 'auth', function () {
+    return '<img src="'.Auth::user()->avatar . '"/> ';
+}]);
