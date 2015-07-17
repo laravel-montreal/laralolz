@@ -2,7 +2,7 @@
 
 namespace App\Managers;
 
-interface ConferenceManagerInterface extends EloquentManagerBase
+interface ConferenceManagerInterface extends ManagerBaseInterface
 {
     /**
      * @param $name
