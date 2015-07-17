@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateConferenceRequest;
-use App\Repositories\ConferenceRepositoryInterface;
+use App\Managers\ConferenceManagerInterface;
 
 class ConferenceController extends Controller
 {
-    protected $conferenceRepository;
+    protected $conferenceManager;
 
     /**
      * @param ConferenceRepositoryInterface $conferenceRepository
      */
-    public function __construct(ConferenceRepositoryInterface $conferenceRepository)
+    public function __construct(ConferenceManagerInterface $conferenceManager)
     {
-        $this->conferenceRepository = $conferenceRepository;
+        $this->conferenceManager = $conferenceManager;
     }
 
     /**
@@ -23,7 +23,7 @@ class ConferenceController extends Controller
      */
     public function index()
     {
-        $conferences = $this->conferenceRepository->getUpcoming();
+        $conferences = $this->conferenceManager->getUpcoming();
 
         return view('conferences.index', compact('conferences'));
     }
@@ -35,7 +35,7 @@ class ConferenceController extends Controller
      */
     public function store(CreateConferenceRequest $request)
     {
-        $conference = $this->conferenceRepository->create($request);
+        $conference = $this->conferenceManager->create($request);
 
         echo $conference;
     }
