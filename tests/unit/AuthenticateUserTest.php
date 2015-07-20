@@ -1,9 +1,7 @@
 <?php
 
-
 class AuthenticateUserTest extends TestCase
 {
-
     private $userMock;
     private $userManagerMock;
     private $authMock;
