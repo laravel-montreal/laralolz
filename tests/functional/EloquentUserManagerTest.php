@@ -23,6 +23,21 @@ class EloquentUserManagerTest extends TestCase
         $bdUser = User::first();
         $this->assertEquals($bdUser->name, $userData->nickname);
     }
+    public function testItUpdateUserWhenInDatabaseButTwitterProfileHasBeenUpdated(){
+        $bdUserBefore = User::create([
+            'name' => 'name',
+            'email' => 'email@email.com',
+            'avatar' => 'avatar.com'
+        ]);
+        $userData = new SocialiteUser();
+        $userData->nickname = 'name';
+        $userData->email = 'email@email.com';
+        $userData->avatar = 'avatar-new.jpg';
+        $manager = new \App\Managers\EloquentUserManager(new User());
+        $manager->findByUsernameOrCreate($userData);
+        $bdUserAfter = User::first();
+        $this->assertNotEquals($bdUserBefore->avatar, $bdUserAfter->avatar);
+    }
 
     public function testItTakeExistingUserWhenInDatabase(){
         $userData = new SocialiteUser();

@@ -20,10 +20,24 @@ class EloquentUserManager extends EloquentManagerBase implements UserManagerInte
 
     public function findByUsernameOrCreate(SocialiteUser $userData)
     {
-        return $this->model->firstOrCreate([
-            'name'   => $userData->nickname,
-            'email'     => $userData->email,
-            'avatar'     => $userData->avatar
-        ]);
+        $user = $this->model->where('name', $userData->name)->first();
+        if (is_null($user)) {
+            return $this->model->updateOrCreate(
+                [
+                'name'   => $userData->nickname,
+                ],
+                [
+                    'name'   => $userData->nickname,
+                    'email'     => $userData->email,
+                    'avatar'     => $userData->avatar
+
+                ]
+            );
+
+        }
+        else {
+            return $user;
+
+        }
     }
 }
