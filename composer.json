@@ -7,7 +7,8 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "codeception/codeception": "*"
+        "codeception/codeception": "*",
+        "laravel/socialite": "3.0.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

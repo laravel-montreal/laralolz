@@ -17,5 +17,9 @@ class ManagerServiceProvider extends ServiceProvider
             'App\Managers\ConferenceManagerInterface',
             'App\Managers\EloquentConferenceManager'
         );
+        $this->app->bind(
+            'App\Managers\UserManagerInterface',
+            'App\Managers\EloquentUserManager'
+        );
     }
 }

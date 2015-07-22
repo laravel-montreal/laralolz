@@ -13,6 +13,15 @@ class ModelsTest extends TestCase
         Artisan::call('migrate:refresh', ['--env' => 'testing']);
     }
 
+    public function testUserCreate()
+    {
+        $user = factory('App\User')->create();
+
+        $dbUser = User::first();
+
+        $this->assertEquals($user->id, $dbUser->id);
+    }
+
     public function testVenueCreate()
     {
         $venue = factory('App\Venue')->create();
