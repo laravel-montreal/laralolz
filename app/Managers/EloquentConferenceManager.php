@@ -1,6 +1,6 @@
 <?php
 
-namespace App\ManagerBaseInterface;
+namespace App\Managers;
 
 use App\Conference;
 use App\Jobs\CreateConference;
