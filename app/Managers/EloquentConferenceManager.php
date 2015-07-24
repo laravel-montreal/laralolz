@@ -33,7 +33,6 @@ class EloquentConferenceManager extends EloquentManagerBase implements Conferenc
      */
     public function getByVenue($venue)
     {
-
         // TODO: Implement getByVenue() method.
     }
 

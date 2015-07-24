@@ -3,7 +3,8 @@ namespace App\Managers;
 
 use Illuminate\Database\Eloquent\Model;
 
-interface ManagerBaseInterface {
+interface ManagerBaseInterface
+{
     /**
      * @param $id
      * @return Model

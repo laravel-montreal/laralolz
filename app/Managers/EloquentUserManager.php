@@ -34,8 +34,7 @@ class EloquentUserManager extends EloquentManagerBase implements UserManagerInte
                 ]
             );
 
-        }
-        else {
+        } else {
             return $user;
 
         }
