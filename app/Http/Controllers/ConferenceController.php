@@ -11,7 +11,7 @@ class ConferenceController extends Controller
     protected $conferenceManager;
 
     /**
-     * @param ConferenceRepositoryInterface $conferenceRepository
+     * @param ConferenceManagerInterface $conferenceManager
      */
     public function __construct(ConferenceManagerInterface $conferenceManager)
     {
