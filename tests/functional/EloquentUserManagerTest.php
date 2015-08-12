@@ -10,8 +10,6 @@ class EloquentUserManagerTest extends TestCase
     {
         parent::setUp();
         Artisan::call('migrate:refresh', ['--env' => 'testing']);
-
-
     }
     public function testItCreateUserWhenNotInDatabase(){
         $userData = new SocialiteUser();
