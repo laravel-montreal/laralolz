@@ -27,7 +27,8 @@ class EloquentOutingManager extends EloquentManagerBase implements OutingManager
         return $conference->outings()
 						  ->where('starts_at', '>=', Carbon::now())
 						  ->orWhere('ends_at', '>=', Carbon::now())
-						  ->orderBy('starts_at', 'asc');
+						  ->orderBy('starts_at', 'asc')
+                          ->get();
     }
     
     /**

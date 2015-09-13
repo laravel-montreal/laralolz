@@ -12,6 +12,8 @@ class EloquentOutingManagerTest extends TestCase
     private $activeOuting;
     private $upcomingOuting;
     
+    private $conference;
+    
     public function setUp()
     {
         parent::setUp();
@@ -22,45 +24,45 @@ class EloquentOutingManagerTest extends TestCase
         $outings = [];
         $outings[] = $this->upcomingOuting = factory('App\Outing')->create([
             'title' => 'Le-sapin-a-des-boules-1',
-            'start_date' => Carbon::maxValue(),
-            'end_date' => Carbon::maxValue(),
+            'starts_at' => Carbon::maxValue(),
+            'ends_at' => Carbon::maxValue(),
         ]);
         $outings[] = $this->endedOuting = factory('App\Outing')->create([
             'title' => 'Le-sapin-a-des-boules-2',
-            'start_date' => Carbon::minValue(),
-            'end_date' => Carbon::minValue(),
+            'starts_at' => Carbon::minValue(),
+            'ends_at' => Carbon::minValue(),
         ]);
         $outings[] = $this->activeOuting = factory('App\Outing')->create([
             'title' => 'Le-sapin-a-des-boules-3',
-            'start_date' => Carbon::now(),
-            'end_date' => Carbon::maxValue(),
+            'starts_at' => Carbon::now(),
+            'ends_at' => Carbon::maxValue(),
         ]);
         $outings = collect($outings);
         
-        $conference = factory('App\Conference')->create([
-            'slug' => 'Kevin-nest-pas-la',
-        ]);
-        $conference->outings()->saveMany($outings);
+        $this->conference = factory('App\Conference')->create();
+        $this->conference->outings()->saveMany($outings);
     }
     
     public function testItReturnsMultipleOutings(){
-        $outings = $this->manager->getUpcomingByConference($conference);
+        $outings = $this->manager->getUpcomingForConference($this->conference);
         
         $this->assertInstanceOf('\App\Outing', $outings[0]);
         $this->assertInstanceOf('\App\Outing', $outings[1]);
     }
     
     public function testItDoesNotReturnEndedOutings(){
-        $outings = $this->manager->getUpcomingByConference($conference);
+        $outings = $this->manager->getUpcomingForConference($this->conference);
         
-        
-        $this->assertNotContains($outings, $this->endedOuting);
+        // Check that the ended outing is not returned
+        foreach ($outings as $outing) {
+            $this->assertNotEquals($this->endedOuting->id, $outing->id);
+        }
     }
     
     public function testItOrdersOutingsByStartTime(){
-        $outings = $this->manager->getUpcomingByConference($conference);
+        $outings = $this->manager->getUpcomingForConference($this->conference);
         
-        $this->assertEquals($this->activeOuting, $outings[0]);
-        $this->assertEquals($this->upcomingOuting, $outings[1]);
+        $this->assertEquals($this->activeOuting->id, $outings[0]->id);
+        $this->assertEquals($this->upcomingOuting->id, $outings[1]->id);
     }
 }
