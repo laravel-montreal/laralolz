@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateConferenceRequest;
 use App\Managers\ConferenceManagerInterface;
@@ -12,10 +13,13 @@ class ConferenceController extends Controller
 
     /**
      * @param ConferenceManagerInterface $conferenceManager
+     * @param OutingManagerInterface $outingManager
      */
-    public function __construct(ConferenceManagerInterface $conferenceManager)
+    public function __construct(ConferenceManagerInterface $conferenceManager,
+    OutingManagerInterface $outingManager)
     {
         $this->conferenceManager = $conferenceManager;
+        $this->outingManager = $outingManager;
     }
 
     /**
@@ -48,5 +52,16 @@ class ConferenceController extends Controller
     public function create()
     {
         return view('conferences.create');
+    }
+    
+    /**
+     * @return \Illuminate\View\View
+     */
+    public function show(Request $request, $slug)
+    {
+        $conference = $this->conferenceManager->getBySlug($slug);
+        $outings = $this->outingManager->getUpcomingForConference($conference);
+
+        return view('conferences.show', compact('outings'));
     }
 }

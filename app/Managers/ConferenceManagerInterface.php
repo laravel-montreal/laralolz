@@ -10,6 +10,13 @@ interface ConferenceManagerInterface extends ManagerBaseInterface
      * @return mixed
      */
     public function getByName($name);
+    
+    /**
+     * @param $name
+     *
+     * @return mixed
+     */
+    public function getBySlug($name);
 
     /**
      * @param $id

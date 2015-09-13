@@ -18,6 +18,10 @@ class ManagerServiceProvider extends ServiceProvider
             'App\Managers\EloquentConferenceManager'
         );
         $this->app->bind(
+            'App\Managers\OutingManagerInterface',
+            'App\Managers\EloquentOutingManager'
+        );
+        $this->app->bind(
             'App\Managers\UserManagerInterface',
             'App\Managers\EloquentUserManager'
         );
