@@ -60,8 +60,11 @@ class ConferenceController extends Controller
     public function show(Request $request, $slug)
     {
         $conference = $this->conferenceManager->getBySlug($slug);
+        if (is_null($conference)) {
+            return view('errors.404');
+        }
+        
         $outings = $this->outingManager->getUpcomingForConference($conference);
-
         return view('conferences.show', compact('outings'));
     }
 }
