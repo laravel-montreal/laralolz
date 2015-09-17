@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateConferenceRequest;
 use App\Managers\ConferenceManagerInterface;
+use App\Managers\OutingManagerInterface;
 
 class ConferenceController extends Controller
 {
