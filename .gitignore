@@ -4,5 +4,3 @@
 .env
 /.idea/
 /vendor/
-
-tests/_output/*
