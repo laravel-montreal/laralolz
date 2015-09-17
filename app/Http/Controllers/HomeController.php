@@ -2,18 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateConferenceRequest;
-use App\Managers\ConferenceManagerInterface;
+use Illuminate\Contracts\View\Factory;
 
 class HomeController extends Controller
 {
+    /**
+     * @var Factory
+     */
+    private $viewFactory;
+
+    /**
+     * @param Factory $viewFactory
+     */
+    public function __construct(Factory $viewFactory)
+    {
+        $this->viewFactory = $viewFactory;
+    }
     public function index()
     {
-        return view('atomic.pages.home');
+        return $this->viewFactory->make('atomic.pages.home');
     }
     public function loggedIn()
     {
-        return view('atomic.pages.logged-in');
+        return $this->viewFactory->make('atomic.pages.logged-in');
     }
 }

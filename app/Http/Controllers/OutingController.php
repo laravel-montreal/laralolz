@@ -2,26 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateConferenceRequest;
-use App\Managers\ConferenceManagerInterface;
+use Illuminate\Contracts\View\Factory;
 
 class OutingController extends Controller
 {
+    /**
+     * @var Factory
+     */
+    private $viewFactory;
+
+    /**
+     * @param Factory $viewFactory
+     */
+    public function __construct(Factory $viewFactory)
+    {
+        $this->viewFactory = $viewFactory;
+    }
     public function choose()
     {
-        return view('atomic.pages.outing.choose');
+        return $this->viewFactory->make('atomic.pages.outing.choose');
     }
     public function create()
     {
-        return view('atomic.pages.outing.create');
+        return $this->viewFactory->make('atomic.pages.outing.create');
     }
     public function description()
     {
-        return view('atomic.pages.outing.description');
+        return $this->viewFactory->make('atomic.pages.outing.description');
     }
     public function own()
     {
-        return view('atomic.pages.outing.own');
+        return $this->viewFactory->make('atomic.pages.outing.own');
     }
 }

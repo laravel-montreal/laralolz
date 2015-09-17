@@ -2,14 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateConferenceRequest;
-use App\Managers\ConferenceManagerInterface;
+use Illuminate\Contracts\View\Factory;
 
 class VenueController extends Controller
 {
+    /**
+     * @var Factory
+     */
+    private $viewFactory;
+
+    /**
+     * @param Factory $viewFactory
+     */
+    public function __construct(Factory $viewFactory)
+    {
+        $this->viewFactory = $viewFactory;
+    }
     public function search()
     {
-        return view('atomic.pages.venue.search');
+        return $this->viewFactory->make('atomic.pages.venue.search');
     }
 }
