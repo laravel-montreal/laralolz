@@ -3,7 +3,6 @@
 use App\User;
 use Laravel\Socialite\One\User as SocialiteUser;
 
-
 class EloquentUserManagerTest extends TestCase
 {
     public function setUp()
@@ -11,7 +10,9 @@ class EloquentUserManagerTest extends TestCase
         parent::setUp();
         Artisan::call('migrate:refresh', ['--env' => 'testing']);
     }
-    public function testItCreateUserWhenNotInDatabase(){
+
+    public function testItCreateUserWhenNotInDatabase()
+    {
         $userData = new SocialiteUser();
         $userData->nickname = 'name';
         $userData->email = 'email@email.com';
@@ -21,11 +22,12 @@ class EloquentUserManagerTest extends TestCase
         $bdUser = User::first();
         $this->assertEquals($bdUser->name, $userData->nickname);
     }
-    public function testItUpdateUserWhenInDatabaseButTwitterProfileHasBeenUpdated(){
+    public function testItUpdateUserWhenInDatabaseButTwitterProfileHasBeenUpdated()
+    {
         $bdUserBefore = User::create([
             'name' => 'name',
             'email' => 'email@email.com',
-            'avatar' => 'avatar.com'
+            'avatar' => 'avatar.com',
         ]);
         $userData = new SocialiteUser();
         $userData->nickname = 'name';
@@ -37,7 +39,8 @@ class EloquentUserManagerTest extends TestCase
         $this->assertNotEquals($bdUserBefore->avatar, $bdUserAfter->avatar);
     }
 
-    public function testItTakeExistingUserWhenInDatabase(){
+    public function testItTakeExistingUserWhenInDatabase()
+    {
         $userData = new SocialiteUser();
         $userData->nickname = 'name';
         $userData->email = 'email@email.com';
