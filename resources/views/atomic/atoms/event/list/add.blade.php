@@ -1,1 +1,1 @@
-<button>fooAddEventButton</button>
+@include('atomic.atoms.buttons.magic')
