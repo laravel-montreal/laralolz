@@ -53,5 +53,5 @@ Route::get('logout', 'AuthController@logout');
 
 // test protected route
 Route::get('profile', ['middleware' => 'auth', function () {
-    return '<img src="'.Auth::user()->avatar . '"/> ';
+    return '<img src="' . Auth::user()->avatar . '"/> ';
 }]);
