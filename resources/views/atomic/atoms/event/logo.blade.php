@@ -1,1 +1,1 @@
-<figure><img src="http://lorempixel.com/200/200/"></figure>
+<figure><img src="http://lorempixel.com/200/200/nightlife"></figure>
