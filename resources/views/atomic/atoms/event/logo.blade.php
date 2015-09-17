@@ -1,1 +1,1 @@
-<figure><img src="http://lorempixel.com/200/200/nightlife"></figure>
+<figure><img src="http://lorempixel.com/200/200/nightlife/?{{ rand(0,10) }}"></figure>
