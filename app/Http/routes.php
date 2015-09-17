@@ -20,52 +20,33 @@ Route::resource('/', 'ConferenceController');
  *  Home routes
  */
 
-Route::get('/home', function () {
-    return view('atomic.pages.home');
-});
+Route::get('/home', 'HomeController@index');
 
 // Note: The logged in page will be accessible from the '/' route when user is authenticated.
 // This should be done in a future commit.
-Route::get('/logged-in', function () {
-    return view('atomic.pages.logged-in');
-});
+Route::get('/logged-in', 'HomeController@loggedIn');
 
 /**
  * Outing routes
  */
 
-Route::get('/outing/choose', function () {
-    return view('atomic.pages.outing.choose');
-});
+Route::get('/outing/choose', 'OutingController@choose');
 
-Route::get('/outing/create', function () {
-    return view('atomic.pages.outing.create');
-});
+Route::get('/outing/create', 'OutingController@create');
 
-Route::get('/outing/description', function () {
-    return view('atomic.pages.outing.description');
-});
+Route::get('/outing/description', 'OutingController@description');
 
-Route::get('/outing/own', function () {
-    return view('atomic.pages.outing.own');
-});
+Route::get('/outing/own', 'OutingController@own');
 
 /**
  * Venue routes
  */
 
-Route::get('/venue/search', function () {
-    return view('atomic.pages.venue.search');
-});
+Route::get('/venue/search', 'VenueController@search');
 
 /**
  * Twitter login/logout routes
  */
-
-Route::get('auth/login', function () {
-    return view('atomic.pages.login');
-});
-
 Route::get('twitter/login', 'AuthController@login');
 
 Route::get('logout', 'AuthController@logout');
