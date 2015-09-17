@@ -26,6 +26,7 @@ Route::get('/home', function () {
 
 // Note: The logged in page will be accessible from the '/' route when user is authenticated.
 // This should be done in a future commit.
+
 Route::get('/logged-in', function () {
     return view('atomic.pages.logged-in');
 });
@@ -72,5 +73,5 @@ Route::get('logout', 'AuthController@logout');
 
 // test protected route
 Route::get('profile', ['middleware' => 'auth', function () {
-    return '<img src="'.Auth::user()->avatar . '"/> ';
+    return '<img src="' . Auth::user()->avatar . '"/> ';
 }]);
