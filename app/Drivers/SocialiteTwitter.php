@@ -6,13 +6,11 @@ use Laravel\Socialite\Contracts\Factory as Socialite;
 
 class SocialiteTwitter
 {
-
     private $socialite;
 
     public function __construct(Socialite $socialite)
     {
         $this->socialite = $socialite;
-
     }
 
     public function redirect()

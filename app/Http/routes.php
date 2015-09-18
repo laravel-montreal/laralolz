@@ -24,7 +24,6 @@ Route::get('/home', 'HomeController@index');
 
 // Note: The logged in page will be accessible from the '/' route when user is authenticated.
 // This should be done in a future commit.
-Route::get('/logged-in', 'HomeController@loggedIn');
 
 /**
  * Outing routes
@@ -47,11 +46,21 @@ Route::get('/venue/search', 'VenueController@search');
 /**
  * Twitter login/logout routes
  */
+
+Route::get('auth/login', function () {
+    return view('atomic.pages.login');
+});
+
 Route::get('twitter/login', 'AuthController@login');
 
 Route::get('logout', 'AuthController@logout');
 
-// test protected route
-Route::get('profile', ['middleware' => 'auth', function () {
-    return '<img src="' . Auth::user()->avatar . '"/> ';
-}]);
+/**
+ * Routes needing authentication
+ */
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/logged-in', 'HomeController@loggedIn');
+    Route::get('profile', function () {
+        return '<img src="' . Auth::user()->avatar . '"/> ';
+    });
+});
