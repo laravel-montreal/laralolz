@@ -24,6 +24,7 @@ class AuthenticateUser
         if (!$hasToken) {
             return $this->getAuthorisationFirst();
         }
+
         $user = $this->users->findByUsernameOrCreate($this->getTwitterUser());
         $this->auth->login($user, true);
         return redirect()->intended('/home');

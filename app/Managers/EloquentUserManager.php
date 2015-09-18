@@ -3,7 +3,6 @@
 namespace App\Managers;
 
 use App\User;
-
 use Laravel\Socialite\One\User as SocialiteUser;
 
 class EloquentUserManager extends EloquentManagerBase implements UserManagerInterface
@@ -24,12 +23,12 @@ class EloquentUserManager extends EloquentManagerBase implements UserManagerInte
         if (is_null($user)) {
             return $this->model->updateOrCreate(
                 [
-                'name'   => $userData->nickname,
+                    'name' => $userData->nickname,
                 ],
                 [
-                    'name'   => $userData->nickname,
-                    'email'     => $userData->email,
-                    'avatar'     => $userData->avatar
+                    'name' => $userData->nickname,
+                    'email' => $userData->email,
+                    'avatar' => $userData->avatar,
 
                 ]
             );
