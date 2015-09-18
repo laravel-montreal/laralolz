@@ -17,7 +17,7 @@ class YelpServiceProviderTest extends TestCase
         Mockery::close();
     }
 
-    public function testAuthenticateHeaderIsValid()
+    public function testAuthenticateHeadersAreValid()
     {
         $yelpServiceProvider = new YelpServiceProvider();
         $headers = $yelpServiceProvider->getAuthenticateHeader();
