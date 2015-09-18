@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+
     /**
      * Bootstrap any application services.
      *
@@ -25,4 +26,5 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind('App\Interfaces\VenueServiceProviderInterface', 'App\Providers\YelpServiceProvider');
     }
+
 }

@@ -22,4 +22,5 @@ interface ConferenceManagerInterface extends ManagerBaseInterface
      * @return mixed
      */
     public function getUpcoming();
+
 }
