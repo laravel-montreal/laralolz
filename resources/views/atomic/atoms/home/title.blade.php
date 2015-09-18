@@ -1,1 +1,0 @@
-<h1>Laralolz</h1>

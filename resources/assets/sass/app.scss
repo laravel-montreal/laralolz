@@ -1,8 +1,10 @@
 @import "resources/assets/sass/_partials/variables.scss";
+@import "resources/assets/sass/_partials/reset.scss";
 @import "../vendor/material-design-lite/src/material-design-lite.scss";
 
 /** Overrides of MDL variables **/
 $text-link-color: $laralolz-orange-dark;
+
 
 a{
   color: $text-link-color;
@@ -53,6 +55,49 @@ header.navbar .sign-in{
 
 header.navbar .fa{
   margin-left: 4px;
+}
+
+.breadcrumbs{
+  margin: 10px;
+}
+
+.breadcrumbs:before{
+  font-family: FontAwesome;
+  content: "\f053";
+  margin-right: 4px;
+}
+
+.header{
+  text-align: center;
+}
+
+.datepicker{
+  text-align: center;
+  margin: 15px 0;
+}
+
+section article{
+  padding: 23px;
+}
+
+section article h6{
+  margin-top: 0;
+}
+
+section article figure img{
+  border-radius: 50%;
+  height: 115px;
+  float: left;
+  margin-right: 23px;
+}
+
+section article{
+  min-height: 115px;
+}
+
+button.magic{
+  float: right;
+  margin-right: 23px;
 }
 
 

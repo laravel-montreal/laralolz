@@ -1,0 +1,1 @@
+<div class="datepicker">fooDatePicker</div>

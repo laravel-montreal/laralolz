@@ -1,1 +1,0 @@
-<div>fooEventCity</div>

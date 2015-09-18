@@ -9,13 +9,11 @@
 @stop
 
 @section('navbar')
-    @include('atomic.molecules.home.header')
+    BIG HOMEPAGE LOGO + NAVBAR GOES HERE
 @stop
 
 @section('main')
-    @include('atomic.atoms.home.title')
-    @include('atomic.atoms.home.tagline')
-    @include('atomic.organisms.event.list')
+    CONFERENCE LIST GOES HERE
 @stop
 
 @section('footer')

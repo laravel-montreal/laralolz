@@ -1,1 +1,1 @@
-{{ $breadCrumbs }}
+<div class="breadcrumbs">{{ $breadCrumbs }}</div>
