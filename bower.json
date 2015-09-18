@@ -10,5 +10,8 @@
     "resources/assets/vendor",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "material-design-lite": "~1.0.4"
+  }
 }
