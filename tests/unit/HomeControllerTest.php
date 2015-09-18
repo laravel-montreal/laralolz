@@ -4,16 +4,13 @@ class HomeControllerTest extends TestCase
 {
     private $homeController;
     private $viewFactoryMock;
+
     public function setUp()
     {
         parent::setUp();
 
         $this->viewFactoryMock = Mockery::mock('\Illuminate\Contracts\View\Factory');
         $this->homeController = new \App\Http\Controllers\HomeController($this->viewFactoryMock);
-    }
-    public function tearDown()
-    {
-        parent::tearDown();
     }
 
     public function testWhenRequestingHome_TheHomeViewIsReturned()
