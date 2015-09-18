@@ -13,6 +13,24 @@ The application has been initialized, builded and designed by the [Laravel Montr
 
 Thank you for considering contributing the Laralolz project. Please use git-flow standards and the core development team will manage every pull requests you submit.
 
+To run the application you will need to run the follorwing commands
+
+```
+composer install
+npm install
+bower install
+```
+
+If for some reason you are having problems running ```npm install```, run the following commands to update your version of node.
+
+```
+# Note the new setup script name for Node.js v0.12
+curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+
+# Then install with:
+sudo apt-get install -y nodejs
+```
+
 ### License
 
 The MIT License (MIT)
