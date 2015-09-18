@@ -24,7 +24,6 @@ Route::get('/home', 'HomeController@index');
 
 // Note: The logged in page will be accessible from the '/' route when user is authenticated.
 // This should be done in a future commit.
-
 Route::get('/logged-in', 'HomeController@loggedIn');
 
 /**
