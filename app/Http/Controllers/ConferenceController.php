@@ -25,7 +25,7 @@ class ConferenceController extends Controller
     {
         $conferences = $this->conferenceManager->getUpcoming();
 
-        return view('conferences.index', compact('conferences'));
+        return view('atomic.pages.conferences.index', compact('conferences'));
     }
 
     /**
@@ -47,6 +47,6 @@ class ConferenceController extends Controller
      */
     public function create()
     {
-        return view('conferences.create');
+        return view('atomic.pages.conferences.create');
     }
 }
