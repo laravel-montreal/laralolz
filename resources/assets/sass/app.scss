@@ -1,6 +1,15 @@
 @import "../vendor/material-design-lite/src/material-design-lite.scss";
 
-header{
+header.navbar{
   height: 56px;
-  background-color: red;
+  background-color: #dddddd;
+}
+
+header.navbar .sign-in{
+  float: right;
+  marging-top: 4px;
+}
+
+header.navbar .fa{
+  margin-left: 4px;
 }
