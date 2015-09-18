@@ -1,8 +1,49 @@
+@import "resources/assets/sass/_partials/variables.scss";
 @import "../vendor/material-design-lite/src/material-design-lite.scss";
+
+/** Overrides of MDL variables **/
+$text-link-color: $laralolz-orange-dark;
+
+a{
+  color: $text-link-color;
+}
+
+  // Colored button colors
+.mdl-button--fab.mdl-button--colored {
+  background: $laralolz-green-dark;
+  color: $laralolz-white;
+}
+
+.mdl-button--fab.mdl-button--colored:hover {
+  background-color: $laralolz-green-darker;
+}
+
+.mdl-button--fab.mdl-button--colored:focus:not(:active) {
+  background-color: $laralolz-green;
+}
+.mdl-button--fab.mdl-button--colored:active {
+  background-color: $laralolz-green-darker;
+}
+.mdl-button--fab.mdl-button--colored .mdl-ripple {
+  background: $laralolz-green;
+}
 
 header.navbar{
   height: 56px;
-  background-color: #dddddd;
+  background-color: $laralolz-orange-dark;
+}
+
+header .logo{
+  height: 41px;
+  margin: 7px;
+}
+
+header a{
+  text-decoration: none;
+  color: $laralolz-white;
+  display: block;
+  margin: 17px 11px;
+  font-size: 20px;
 }
 
 header.navbar .sign-in{
@@ -13,3 +54,5 @@ header.navbar .sign-in{
 header.navbar .fa{
   margin-left: 4px;
 }
+
+

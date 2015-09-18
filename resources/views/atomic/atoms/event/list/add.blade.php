@@ -1,1 +1,1 @@
-@include('atomic.atoms.buttons.magic')
+@include('atomic.atoms._common.buttons.magic')
