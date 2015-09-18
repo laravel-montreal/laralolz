@@ -15,10 +15,10 @@ class AuthenticateUserTest extends TestCase
         $this->authMock = Mockery::mock('Illuminate\Contracts\Auth\Guard');
         $this->socialiteMock = Mockery::mock('App\Drivers\SocialiteTwitter');
         $this->socialiteUserMock = Mockery::mock('\Laravel\Socialite\One\User');
-
     }
     public function tearDown()
     {
+        parent::tearDown();
         Mockery::close();
     }
 

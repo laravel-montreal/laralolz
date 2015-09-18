@@ -9,7 +9,6 @@ use App\Http\Requests;
 
 class AuthController extends Controller
 {
-
     public function login(AuthenticateUser $authenticateUser, Request $request)
     {
         return $authenticateUser->execute($request->has('oauth_token'));
