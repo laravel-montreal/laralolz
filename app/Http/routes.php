@@ -59,8 +59,11 @@ Route::get('logout', 'AuthController@logout');
  * Routes needing authentication
  */
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/logged-in', 'HomeController@loggedIn');
+
+    Route::get('logged-in', 'HomeController@loggedIn');
+
     Route::get('profile', function () {
         return '<img src="' . Auth::user()->avatar . '"/> ';
     });
+
 });
