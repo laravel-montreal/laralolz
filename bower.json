@@ -1,0 +1,17 @@
+{
+  "name": "laralolz",
+  "version": "0.0.0",
+  "homepage": "https://github.com/CtrlWebInc/laralolz",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "resources/assets/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "~1.0.4"
+  }
+}
