@@ -6,15 +6,9 @@ interface VenueServiceProviderInterface
 {
 
     /**
-     * @param $params
+     * @param array $params
      * @return mixed
      */
-    public function searchByLocation($params);
-
-    /**
-     * @param $params
-     * @return mixed
-     */
-    public function searchByTerms($params);
+    public function search(array $params);
 
 }
