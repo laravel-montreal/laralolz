@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Interfaces\VenueServiceProviderInterface;
+//OAuthToken
 
 class YelpServiceProvider implements VenueServiceProviderInterface
 {
+    const YELP_ENDPOINT = 'https://api.yelp.com/v2/';
 
     protected $oauth;
 
@@ -25,7 +27,35 @@ class YelpServiceProvider implements VenueServiceProviderInterface
      */
     public function search(array $params)
     {
-        // TODO: Implement searchByLocation() method.
+        $query = http_build_query($params);
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_URL => self::YELP_ENDPOINT . '/' . $query,
+        ));
+        $response = curl_exec($curl);
+        curl_close($curl);
+
+        $response;
+    }
+
+    public function authenticate()
+    {
+//        $unsigned_url = "https://" . $host . $path;
+//
+//        $token = new OAuthToken($GLOBALS['TOKEN'], $GLOBALS['TOKEN_SECRET']);
+//        $consumer = new OAuthConsumer($GLOBALS['CONSUMER_KEY'], $GLOBALS['CONSUMER_SECRET']);
+//        $signature_method = new OAuthSignatureMethod_HMAC_SHA1();
+//
+//        $oauthrequest = OAuthRequest::from_consumer_and_token(
+//            $consumer,
+//            $token,
+//            'GET',
+//            $unsigned_url
+//        );
+//
+//        $oauthrequest->sign_request($signature_method, $consumer, $token);
     }
 
 }

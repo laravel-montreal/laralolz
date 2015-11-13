@@ -27,4 +27,17 @@ class YelpServiceProviderTest extends TestCase
         $this->assertTrue(array_key_exists('YELP_OAUTH_TOKEN_SECRET', $headers));
     }
 
+    public function testSearchByLocationReturnsArray()
+    {
+        $yelpServiceProvider = new YelpServiceProvider();
+
+        $params = [
+            'location' => 'Montréal',
+        ];
+
+        $result = $yelpServiceProvider->search($params);
+
+        $this->assertInternalType('array', $result);
+    }
+
 }
