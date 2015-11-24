@@ -1,0 +1,1 @@
+<figure><img src="http://lorempixel.com/200/200/nightlife"></figure>

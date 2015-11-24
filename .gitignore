@@ -4,3 +4,12 @@
 .env
 /.idea/
 /vendor/
+Homestead.yaml
+.DS_Store
+
+tests/_output/*
+resources/assets/vendor
+public/js
+public/css
+node_modules
+public/build

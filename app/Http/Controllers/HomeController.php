@@ -1,36 +1,29 @@
-<?php namespace App\Http\Controllers;
+<?php
 
-class HomeController extends Controller {
+namespace App\Http\Controllers;
 
-	/*
-	|--------------------------------------------------------------------------
-	| Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller renders your application's "dashboard" for users that
-	| are authenticated. Of course, you are free to change or remove the
-	| controller as you wish. It is just here to get your app started!
-	|
-	*/
+use Illuminate\Contracts\View\Factory;
 
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
+class HomeController extends Controller
+{
+    /**
+     * @var Factory
+     */
+    private $viewFactory;
 
-	/**
-	 * Show the application dashboard to the user.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		return view('home');
-	}
-
+    /**
+     * @param Factory $viewFactory
+     */
+    public function __construct(Factory $viewFactory)
+    {
+        $this->viewFactory = $viewFactory;
+    }
+    public function index()
+    {
+        return $this->viewFactory->make('atomic.pages.home');
+    }
+    public function loggedIn()
+    {
+        return $this->viewFactory->make('atomic.pages.logged-in');
+    }
 }

@@ -1,27 +1,45 @@
-<?php namespace App;
+<?php
+
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
+class Outing extends Model
+{
+    /**
+     * @var array
+     */
+    protected $fillable = ['slug', 'title', 'subtitle', 'starts_at', 'ends_at', 'description'];
 
-class Outing extends Model {
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function venue()
+    {
+        return $this->belongsTo('App\Venue');
+    }
 
-	use SoftDeletes;
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function conference()
+    {
+        return $this->belongsTo('App\Conference');
+    }
 
-	protected $fillable = ['slug', 'title', 'subtitle', 'starts_at', 'ends_at'];
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function admin()
+    {
+        return $this->belongsTo('App\User', 'admin_id');
+    }
 
-  public function venue()
-  {
-    return $this->belongsTo('App\Venue');
-  }
-
-  public function administrator()
-  {
-    return $this->belongsTo('App\User', 'administrator_id');
-  }
-
-  public function participants()
-  {
-    return $this->belongsToMany('App\User');
-  }
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }
