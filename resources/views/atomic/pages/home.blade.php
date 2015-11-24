@@ -1,7 +1,7 @@
 @extends('atomic.templates.base')
 
 @section('pageTitle')
-    Insert clever slogan here
+    Laralolz
 @stop
 
 @section('bodyClass')
