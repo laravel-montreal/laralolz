@@ -1,1 +1,1 @@
-<h1>Laralolz</h1>
+<img src={{asset('img/transparent-logo.png')}} alt="Logo">

@@ -8,6 +8,10 @@
     home
 @stop
 
+@section('navbar')
+    @include('atomic.molecules.home.navbar')
+@stop
+
 @section('main')
     @include('atomic.molecules.home.header')
     @include('atomic.organisms.event.list')
