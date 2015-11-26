@@ -1,9 +1,5 @@
 @extends('atomic.templates.base')
 
-@section('pageTitle')
-    Laralolz
-@stop
-
 @section('bodyClass')
     home
 @stop
