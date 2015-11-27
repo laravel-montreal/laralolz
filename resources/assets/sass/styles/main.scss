@@ -1,0 +1,96 @@
+// Padding + Margin Utilies
+// Generates classes like p-5 for a padding of 5 and m-10 for a padding of 10
+
+$i : 0;
+@while $i <= 100 {
+  .p-#{$i} { padding : #{$i}px; }
+  .m-#{$i} { margin : #{$i}px; }
+  $i: $i + $laraloz-base-dimension;
+}
+
+// Typography
+
+body{
+  font-family: 'Roboto','Helvetica','Arial',sans-serif!important;
+}
+
+// Colors
+
+.main-color{
+  color: $laralolz-main;
+}
+
+.main-color-bg{
+  background-color: $laralolz-main;
+}
+
+.comp-color{
+  color: $laralolz-comp;
+}
+
+.comp-color-bg{
+  background-color: $laralolz-comp;
+}
+
+// Styles
+
+.navbar{
+  height: $laraloz-base-dimension*9+px;
+}
+
+.navbar .twitter-button{
+  float: right;
+  margin: $laraloz-base-dimension+px;
+}
+
+.navbar .twitter-button .fa-twitter{
+  margin-left: $laraloz-base-dimension+px;
+}
+
+section{
+  padding: $laraloz-base-dimension*4+px;
+}
+
+figure{
+  margin: 0;
+}
+
+article{
+  margin-bottom: $laraloz-base-dimension*2px;
+  min-height: 100px;
+}
+
+article .article-details{
+  padding: $laraloz-base-dimension*3+px 0;
+}
+
+article .article-details h5{
+  margin: 0;
+}
+
+.list-title{
+  margin-top: 0;
+}
+
+figure.avatar{
+  width: 100px;
+  float:left;
+  margin-right: $laraloz-base-dimension*3px;
+}
+
+figure.avatar img{
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
+}
+
+.magic-button{
+  background-color: $button-primary-color !important;
+  position: fixed;
+  bottom: 35px;
+  width: $laraloz-magic-button-size+px;
+  height: $laraloz-magic-button-size+px;
+  right: calc(50% - #{$laraloz-magic-button-size}/ 2 * 1px);
+  right: calc(50% - #{$laraloz-magic-button-size}/ 2 * 1px);
+  right: calc(50% - #{$laraloz-magic-button-size}/ 2 * 1px);
+}

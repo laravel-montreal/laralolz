@@ -1,11 +1,11 @@
 @extends('atomic.templates.base')
 
-@section('pageTitle')
-    Insert clever slogan here
-@stop
-
 @section('bodyClass')
     home
+@stop
+
+@section('navbar')
+    @include('atomic.molecules.home.navbar')
 @stop
 
 @section('main')

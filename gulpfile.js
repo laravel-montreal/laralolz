@@ -14,8 +14,8 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.sass('app.scss')
 	    .scripts([
-	        '../vendor/material-design-lite/material.min.js'
-	    ], 'public/js/app.js')
+	        'material.min.js'
+	    ], 'public/js/app.js', 'node_modules/material-design-lite')
 	    .version(['css/app.css', 'js/app.js']);
     	//.phpUnit();
 });

@@ -1,1 +1,1 @@
-<div>Get wasted with your newfound friends</div>
+<h4>the end of the conference is only another beginning</h4>

@@ -1,1 +1,1 @@
-<div>fooEventCity</div>
+<div class="comp-color">fooEventCity</div>
