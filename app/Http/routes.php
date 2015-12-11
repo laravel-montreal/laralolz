@@ -29,7 +29,8 @@ Route::get('/home', 'HomeController@index');
  * Outing routes
  */
 
-Route::get('/outing/choose', 'OutingController@choose');
+
+Route::get('/conference/{slug}', 'ConferenceController@show');
 
 Route::get('/outing/create', 'OutingController@create');
 

@@ -27,6 +27,16 @@ class EloquentConferenceManager extends EloquentManagerBase implements Conferenc
     {
         return $this->model->where('Name', $name)->first();
     }
+    
+    /**
+     * @param $slug
+     *
+     * @return mixed
+     */
+    public function getBySlug($slug)
+    {
+        return $this->model->where('slug', $slug)->firstOrFail();
+    }
 
     /**
      * @param $venue

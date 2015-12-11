@@ -40,13 +40,35 @@ class ModelsTest extends TestCase
         $this->assertEquals($outing->id, $dbOuting->id);
     }
 
-    public function testConferenceOuting()
+    public function testConferenceCreate()
     {
         $conference = factory('App\Conference')->create();
 
         $dbConference = Conference::first();
 
         $this->assertEquals($conference->id, $dbConference->id);
+    }
+    
+    public function testConferenceOutingRelations()
+    {
+        $conference = factory('App\Conference')->create();
+
+        $outings = [];
+        $outings[] = factory('App\Outing')->create();
+        $outings[] = factory('App\Outing')->create([
+            'slug' => 'Le-sapin-a-des-boules-1',
+            'title' => 'Le-sapin-a-des-boules-1',
+        ]);
+        $outings = collect($outings);
+        $conference->outings()->saveMany($outings);
+
+        $dbConference = Conference::first();
+        $dbOutings = $dbConference->outings()->get();
+        $this->assertEquals($outings->lists('id')->all(), $dbOutings->lists('id')->all());
+
+        $outingConference0 = $outings[0]->conference()->first();
+        $outingConference1 = $outings[1]->conference()->first();
+        $this->assertEquals($outingConference0, $outingConference1);
     }
 
     public function testVenueOutingRelations()
